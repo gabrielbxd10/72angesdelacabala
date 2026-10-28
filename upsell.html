@@ -83,7 +83,7 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:20px}.fan{height:330px;max-width:470px;margin:auto;width:100%}.qs{grid-template-columns:1fr 1fr}.sample{flex-basis:44%}}
 @media(max-width:650px){.wrap{padding:52px 18px}.hero{padding-top:24px}.fan{height:260px}.badge{width:92px;height:92px;font-size:10.5px}.badge b{font-size:26px}
 .book{grid-template-columns:1fr;gap:16px;text-align:left}.book img{max-width:210px;margin:0 auto}.book .checks{columns:1}.qs{grid-template-columns:1fr}.cmp{grid-template-columns:1fr}
-.sample{flex-basis:72%}.offer{padding:36px 20px 26px}.price{font-size:46px}.guar{flex-direction:column;text-align:center}.statement{font-size:20px}}
+.sample{flex-basis:72%}.offer{padding:36px 20px 26px}#hotmart-sales-funnel{margin:18px -20px 0}.price{font-size:46px}.guar{flex-direction:column;text-align:center}.statement{font-size:20px}}
 </style>
 </head>
 <body>
@@ -104,7 +104,7 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
    <li>Descubre los cuatro mundos y el lugar de los ángeles en ellos</li>
    <li>Interpreta símbolos con método, sin caer en lecturas inventadas</li>
   </ul>
-  <a class="button js-comprar" href="#">SÍ, QUIERO AÑADIR LA BIBLIOTECA<small>Se suma a tu compra con un solo clic</small></a>
+  <a class="button js-comprar" href="#oferta">SÍ, QUIERO AÑADIR LA BIBLIOTECA<small>Se suma a tu compra con un solo clic</small></a>
   <p class="secure">🔒 Pago único · Sin mensualidades · Compra segura en Hotmart</p>
  </div>
 </section>
@@ -221,7 +221,9 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
   <p class="price-note">Pago único de</p>
   <div class="price js-precio">US$17,90</div>
   <p class="price-note">El importe y las opciones de pago se muestran en tu moneda en Hotmart.</p>
-  <a class="button js-comprar" href="#">SÍ, QUIERO MI BIBLIOTECA<small>Se suma a tu compra actual · Acceso inmediato</small></a>
+  <!-- HOTMART - Sales Funnel Widget -->
+  <!--- sales funnel container --->
+  <div id="hotmart-sales-funnel"></div>
   <p class="secure">🔒 Compra segura en Hotmart · Sin mensualidades</p>
  </div>
  <div class="guar"><img src="assets/guarantee-15-300.webp" width="300" height="300" loading="lazy" alt="Garantía de 15 días">
@@ -243,8 +245,7 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
  <p class="eyebrow">Tu estudio continúa</p>
  <h2 style="max-width:760px;margin-left:auto;margin-right:auto">Los nombres son el comienzo.<br>La tradición le da sentido a cada uno.</h2>
  <p>5 libros ilustrados · Un único pago · Solo en esta página</p>
- <a class="button js-comprar" href="#" style="margin:26px auto 0">SÍ, QUIERO AÑADIR LA BIBLIOTECA<small>Se suma a tu compra con un solo clic</small></a>
- <a class="no js-no" href="#">No, gracias. Prefiero continuar solo con mi guía.</a>
+ <a class="button js-comprar" href="#oferta" style="margin:26px auto 0">SÍ, QUIERO AÑADIR LA BIBLIOTECA<small>Se suma a tu compra con un solo clic</small></a>
 </div></section>
 </main>
 
@@ -255,18 +256,21 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
 <script>
 /* ===== CONFIGURACIÓN DE LA OFERTA (editar aquí) ===== */
 var OFERTA = {
-  comprar: "#",   // link de compra del upsell en Hotmart (one-click / funil)
-  rechazar: "#",  // a dónde va el «No, gracias» (upsell 2 o página de gracias)
-  precio: "US$17,90"
+  precio: "US$17,90"  // los botones de compra y rechazo los muestra el widget de Hotmart en #oferta
 };
 /* =================================================== */
-document.querySelectorAll(".js-comprar").forEach(function(a){a.href=OFERTA.comprar;a.addEventListener("click",function(){try{window.fbq&&fbq("track","AddToCart",{content_name:"Biblioteca Premium"})}catch(e){}})});
-document.querySelectorAll(".js-no").forEach(function(a){a.href=OFERTA.rechazar});
 document.querySelectorAll(".js-precio").forEach(function(e){e.textContent=OFERTA.precio});
 (function(){document.querySelectorAll(".collection").forEach(function(col){var c=col.querySelector(".carousel");function m(d){var s=c.querySelector(".sample");c.scrollBy({left:d*((s?s.offsetWidth:300)+18),behavior:"smooth"})}col.querySelector(".prev").addEventListener("click",function(){m(-1)});col.querySelector(".next").addEventListener("click",function(){m(1)})});
 var v=document.getElementById("viewer"),vi=v.querySelector("img");document.querySelectorAll(".sample").forEach(function(b){b.addEventListener("click",function(){vi.src=b.dataset.image;vi.alt=b.dataset.title;v.showModal()})});
 v.querySelector(".close").addEventListener("click",function(){v.close()});v.addEventListener("click",function(e){if(e.target===v)v.close()})})();
 </script>
 <script>!function(w,d){var f=w.fbq=function(){f.callMethod?f.callMethod.apply(f,arguments):f.queue.push(arguments)};w._fbq||(w._fbq=f);f.push=f;f.loaded=!0;f.version="2.0";f.queue=[];fbq("init","1791405689657118");fbq("track","PageView");function s(u,a){var e=d.createElement("script");e.async=!0;e.src=u;if(a)for(var k in a)e.setAttribute(k,a[k]);d.head.appendChild(e)}function go(){s("https://cdn.utmify.com.br/scripts/utms/latest.js",{"data-utmify-prevent-xcod-sck":"","data-utmify-prevent-subids":""});s("https://cdn.utmify.com.br/scripts/pixel/pixel.js");s("https://connect.facebook.net/en_US/fbevents.js")}d.readyState==="complete"?go():w.addEventListener("load",go)}(window,document)</script>
+
+<!--- script load and setup --->
+<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+<script>
+checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+</script>
+<!-- HOTMART - Sales Funnel Widget -->
 </body>
 </html>
