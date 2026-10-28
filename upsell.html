@@ -26,7 +26,9 @@ p{color:var(--muted);margin:12px 0}.wrap{max-width:1100px;margin:auto;padding:70
 .steps{display:flex;justify-content:center;gap:8px;align-items:center;font-size:12px;color:var(--muted);padding:14px 10px 0;flex-wrap:wrap}
 .steps span{padding:4px 10px;border-radius:20px;background:var(--soft)}.steps .done{background:#e3f3ea;color:var(--ok)}.steps .now{background:var(--ink);color:#fff}
 /* hero */
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding-top:40px}
+.hero{max-width:780px;padding-top:40px;text-align:center}
+.hero .checks{text-align:left;max-width:560px;margin-left:auto;margin-right:auto}.hero .button{margin:0 auto}
+.hero .mock{margin:6px 0 24px}
 .hero .lead{font-size:19px;line-height:1.6}
 .fan{position:relative;height:430px}
 .fan img{position:absolute;width:44%;border-radius:6px;box-shadow:0 18px 40px #142d4430;border:1px solid #e8dcc0}
@@ -56,7 +58,7 @@ p{color:var(--muted);margin:12px 0}.wrap{max-width:1100px;margin:auto;padding:70
 .sample{flex:0 0 calc((100% - 72px)/5);background:none;border:0;padding:0;text-align:left;color:var(--ink);scroll-snap-align:start}
 .sample img{aspect-ratio:3/4;object-fit:cover;border:1px solid #e5e0d6;border-radius:4px;transition:transform .2s}
 .sample:hover img{transform:translateY(-4px)}.sample b{display:block;margin-top:10px;font-size:14px}.sample span{font-size:12.5px;color:var(--muted)}
-.carhead{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.carhead{display:flex;justify-content:space-between;align-items:center;gap:20px}.collection{margin-top:34px}.carhead h3{font-size:22px;margin:0}.carhead h3 span{font:700 13px Arial;color:var(--gold);margin-right:10px}
 .carhead button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:22px}
 /* comparação */
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
@@ -94,6 +96,7 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
  <div>
   <p class="eyebrow">Oferta exclusiva para quienes acaban de adquirir la guía</p>
   <h1>Ya conoces a los 72 Ángeles. Ahora descubre <em style="color:var(--gold);font-style:normal">la tradición de la que nacieron.</em></h1>
+  <div class="mock"><img src="assets/upsell/mockup-biblioteca.webp" width="1254" height="1254" fetchpriority="high" decoding="async" alt="Biblioteca Premium de la Cábala: colección de 5 libros ilustrados, 90 páginas"></div>
   <p class="lead">Añade la <b style="color:var(--ink)">Biblioteca Premium de la Cábala y sus Misterios</b>: 5 libros ilustrados, 90 páginas, que te explican la historia, el Árbol de la Vida, los cuatro mundos, el lenguaje de los símbolos y cómo estudiar la tradición con criterio.</p>
   <ul class="checks">
    <li>Entiende de dónde salen los 72 Nombres y cómo se formó la Cábala</li>
@@ -104,7 +107,6 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
   <a class="button js-comprar" href="#">SÍ, QUIERO AÑADIR LA BIBLIOTECA<small>Se suma a tu compra con un solo clic</small></a>
   <p class="secure">🔒 Pago único · Sin mensualidades · Compra segura en Hotmart</p>
  </div>
- <div class="mock"><img src="assets/upsell/mockup-biblioteca.webp" width="1254" height="1254" fetchpriority="high" decoding="async" alt="Biblioteca Premium de la Cábala: colección de 5 libros ilustrados, 90 páginas"></div>
 </section>
 
 <section class="soft"><div class="wrap">
@@ -146,30 +148,37 @@ dialog img{max-height:90vh;width:auto;margin:auto;border-radius:6px}.close{posit
 </section>
 
 <section class="ivory" id="muestras"><div class="wrap">
- <div class="carhead"><div><p class="eyebrow">Mira antes de decidir</p><h2 style="margin-bottom:6px">Páginas reales de la Biblioteca.</h2><p style="margin:0">Desliza para ver más y toca una página para ampliarla.</p></div>
- <div style="flex:none"><button class="prev" aria-label="Anteriores">‹</button> <button class="next" aria-label="Siguientes">›</button></div></div>
- <div class="carousel" tabindex="0" aria-label="Páginas de muestra">
+ <p class="eyebrow">Mira antes de decidir</p><h2 style="margin-bottom:6px">Páginas reales de la Biblioteca.</h2><p style="margin:0 0 10px">Desliza para ver más y toca una página para ampliarla.</p>
+ <div class="collection"><div class="carhead"><h3><span>01</span> Historia y estudio</h3><div style="flex:none"><button class="prev" aria-label="Anteriores">‹</button> <button class="next" aria-label="Siguientes">›</button></div></div>
+ <div class="carousel" tabindex="0" aria-label="Historia y estudio">
   <button class="sample" data-image="assets/upsell/libro-1-pag-1.webp" data-title="El Zóhar"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-1-pag-1-600.webp" alt="Página real: El Zóhar, el Libro del Esplendor"><b>El Zóhar, el Libro del Esplendor</b><span>Libro I</span></button>
-  <button class="sample" data-image="assets/upsell/libro-2-pag-1.webp" data-title="Tiféret"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-1-600.webp" alt="Página real: Tiféret y la belleza del equilibrio"><b>Tiféret y la belleza del equilibrio</b><span>Libro II</span></button>
-  <button class="sample" data-image="assets/upsell/libro-3-pag-1.webp" data-title="Atzilut"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-1-600.webp" alt="Página real: Atzilut, Emanación"><b>Atzilut: Emanación</b><span>Libro III</span></button>
-  <button class="sample" data-image="assets/upsell/libro-4-pag-1.webp" data-title="Números y relaciones"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-1-600.webp" alt="Página real: Números y relaciones interpretativas"><b>Números y relaciones</b><span>Libro IV</span></button>
-  <button class="sample" data-image="assets/upsell/libro-5-pag-1.webp" data-title="Preguntar antes de concluir"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-1-600.webp" alt="Página real: Preguntar antes de concluir"><b>Preguntar antes de concluir</b><span>Libro V</span></button>
   <button class="sample" data-image="assets/upsell/libro-1-pag-2.webp" data-title="Safed"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-1-pag-2-600.webp" alt="Página real: Safed y la transformación de la Cábala"><b>Safed y la transformación de la Cábala</b><span>Libro I</span></button>
-  <button class="sample" data-image="assets/upsell/libro-2-pag-2.webp" data-title="Las conexiones del Árbol"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-2-600.webp" alt="Página real: Las conexiones del Árbol"><b>Las conexiones del Árbol</b><span>Libro II</span></button>
-  <button class="sample" data-image="assets/upsell/libro-3-pag-2.webp" data-title="Beriá"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-2-600.webp" alt="Página real: Beriá, Creación"><b>Beriá: Creación</b><span>Libro III</span></button>
-  <button class="sample" data-image="assets/upsell/libro-4-pag-2.webp" data-title="El espejo"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-2-600.webp" alt="Página real: El espejo como imagen de reflexión"><b>El espejo como imagen de reflexión</b><span>Libro IV</span></button>
-  <button class="sample" data-image="assets/upsell/libro-5-pag-2.webp" data-title="Cuatro etapas"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-2-600.webp" alt="Página real: Cuatro etapas para comprender un texto"><b>Cuatro etapas para comprender un texto</b><span>Libro V</span></button>
   <button class="sample" data-image="assets/upsell/libro-1-pag-3.webp" data-title="Séfer Yetzirá, el Libro de la Formación"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-1-pag-3-600.webp" alt="Página real: Séfer Yetzirá, el Libro de la Formación"><b>Séfer Yetzirá, el Libro de la Formación</b><span>Libro I</span></button>
-  <button class="sample" data-image="assets/upsell/libro-2-pag-3.webp" data-title="Las tres columnas del Árbol"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-3-600.webp" alt="Página real: Las tres columnas del Árbol"><b>Las tres columnas del Árbol</b><span>Libro II</span></button>
-  <button class="sample" data-image="assets/upsell/libro-3-pag-3.webp" data-title="El mapa de los cuatro mundos"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-3-600.webp" alt="Página real: El mapa de los cuatro mundos"><b>El mapa de los cuatro mundos</b><span>Libro III</span></button>
-  <button class="sample" data-image="assets/upsell/libro-4-pag-3.webp" data-title="El agua como imagen de movimiento"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-3-600.webp" alt="Página real: El agua como imagen de movimiento"><b>El agua como imagen de movimiento</b><span>Libro IV</span></button>
-  <button class="sample" data-image="assets/upsell/libro-5-pag-3.webp" data-title="Las fuentes como punto de partida"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-3-600.webp" alt="Página real: Las fuentes como punto de partida"><b>Las fuentes como punto de partida</b><span>Libro V</span></button>
   <button class="sample" data-image="assets/upsell/libro-1-pag-4.webp" data-title="Cinco malentendidos frecuentes"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-1-pag-4-600.webp" alt="Página real: Cinco malentendidos frecuentes"><b>Cinco malentendidos frecuentes</b><span>Libro I</span></button>
-  <button class="sample" data-image="assets/upsell/libro-2-pag-4.webp" data-title="Mapa de lectura comparada"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-4-600.webp" alt="Página real: Mapa de lectura comparada"><b>Mapa de lectura comparada</b><span>Libro II</span></button>
-  <button class="sample" data-image="assets/upsell/libro-3-pag-4.webp" data-title="Mapa de consulta de los cuatro mundos"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-4-600.webp" alt="Página real: Mapa de consulta de los cuatro mundos"><b>Mapa de consulta de los cuatro mundos</b><span>Libro III</span></button>
-  <button class="sample" data-image="assets/upsell/libro-4-pag-4.webp" data-title="Cuatro preguntas para interpretar"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-4-600.webp" alt="Página real: Cuatro preguntas para interpretar"><b>Cuatro preguntas para interpretar</b><span>Libro IV</span></button>
+  <button class="sample" data-image="assets/upsell/libro-5-pag-3.webp" data-title="Las fuentes como punto de partida"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-3-600.webp" alt="Página real: Las fuentes como punto de partida"><b>Las fuentes como punto de partida</b><span>Libro V</span></button>
+  <button class="sample" data-image="assets/upsell/libro-5-pag-1.webp" data-title="Preguntar antes de concluir"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-1-600.webp" alt="Página real: Preguntar antes de concluir"><b>Preguntar antes de concluir</b><span>Libro V</span></button>
   <button class="sample" data-image="assets/upsell/libro-5-pag-4.webp" data-title="Glosario para continuar estudiando"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-4-600.webp" alt="Página real: Glosario para continuar estudiando"><b>Glosario para continuar estudiando</b><span>Libro V</span></button>
- </div>
+ </div></div>
+ <div class="collection"><div class="carhead"><h3><span>02</span> El Árbol y los cuatro mundos</h3><div style="flex:none"><button class="prev" aria-label="Anteriores">‹</button> <button class="next" aria-label="Siguientes">›</button></div></div>
+ <div class="carousel" tabindex="0" aria-label="El Árbol y los cuatro mundos">
+  <button class="sample" data-image="assets/upsell/libro-2-pag-1.webp" data-title="Tiféret"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-1-600.webp" alt="Página real: Tiféret y la belleza del equilibrio"><b>Tiféret y la belleza del equilibrio</b><span>Libro II</span></button>
+  <button class="sample" data-image="assets/upsell/libro-2-pag-2.webp" data-title="Las conexiones del Árbol"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-2-600.webp" alt="Página real: Las conexiones del Árbol"><b>Las conexiones del Árbol</b><span>Libro II</span></button>
+  <button class="sample" data-image="assets/upsell/libro-2-pag-3.webp" data-title="Las tres columnas del Árbol"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-3-600.webp" alt="Página real: Las tres columnas del Árbol"><b>Las tres columnas del Árbol</b><span>Libro II</span></button>
+  <button class="sample" data-image="assets/upsell/libro-2-pag-4.webp" data-title="Mapa de lectura comparada"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-2-pag-4-600.webp" alt="Página real: Mapa de lectura comparada"><b>Mapa de lectura comparada</b><span>Libro II</span></button>
+  <button class="sample" data-image="assets/upsell/libro-3-pag-1.webp" data-title="Atzilut"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-1-600.webp" alt="Página real: Atzilut, Emanación"><b>Atzilut: Emanación</b><span>Libro III</span></button>
+  <button class="sample" data-image="assets/upsell/libro-3-pag-2.webp" data-title="Beriá"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-2-600.webp" alt="Página real: Beriá, Creación"><b>Beriá: Creación</b><span>Libro III</span></button>
+  <button class="sample" data-image="assets/upsell/libro-3-pag-3.webp" data-title="El mapa de los cuatro mundos"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-3-600.webp" alt="Página real: El mapa de los cuatro mundos"><b>El mapa de los cuatro mundos</b><span>Libro III</span></button>
+ </div></div>
+ <div class="collection"><div class="carhead"><h3><span>03</span> Símbolos y lectura</h3><div style="flex:none"><button class="prev" aria-label="Anteriores">‹</button> <button class="next" aria-label="Siguientes">›</button></div></div>
+ <div class="carousel" tabindex="0" aria-label="Símbolos y lectura">
+  <button class="sample" data-image="assets/upsell/libro-4-pag-1.webp" data-title="Números y relaciones"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-1-600.webp" alt="Página real: Números y relaciones interpretativas"><b>Números y relaciones</b><span>Libro IV</span></button>
+  <button class="sample" data-image="assets/upsell/libro-4-pag-2.webp" data-title="El espejo"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-2-600.webp" alt="Página real: El espejo como imagen de reflexión"><b>El espejo como imagen de reflexión</b><span>Libro IV</span></button>
+  <button class="sample" data-image="assets/upsell/libro-4-pag-3.webp" data-title="El agua como imagen de movimiento"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-3-600.webp" alt="Página real: El agua como imagen de movimiento"><b>El agua como imagen de movimiento</b><span>Libro IV</span></button>
+  <button class="sample" data-image="assets/upsell/libro-4-pag-4.webp" data-title="Cuatro preguntas para interpretar"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-4-pag-4-600.webp" alt="Página real: Cuatro preguntas para interpretar"><b>Cuatro preguntas para interpretar</b><span>Libro IV</span></button>
+  <button class="sample" data-image="assets/upsell/libro-3-pag-4.webp" data-title="Mapa de consulta de los cuatro mundos"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-3-pag-4-600.webp" alt="Página real: Mapa de consulta de los cuatro mundos"><b>Mapa de consulta de los cuatro mundos</b><span>Libro III</span></button>
+  <button class="sample" data-image="assets/upsell/libro-5-pag-2.webp" data-title="Cuatro etapas"><img loading="lazy" width="600" height="800" src="assets/upsell/libro-5-pag-2-600.webp" alt="Página real: Cuatro etapas para comprender un texto"><b>Cuatro etapas para comprender un texto</b><span>Libro V</span></button>
+ </div></div>
+
 </div></section>
 
 <section class="navy"><div class="wrap">
@@ -254,8 +263,7 @@ var OFERTA = {
 document.querySelectorAll(".js-comprar").forEach(function(a){a.href=OFERTA.comprar;a.addEventListener("click",function(){try{window.fbq&&fbq("track","AddToCart",{content_name:"Biblioteca Premium"})}catch(e){}})});
 document.querySelectorAll(".js-no").forEach(function(a){a.href=OFERTA.rechazar});
 document.querySelectorAll(".js-precio").forEach(function(e){e.textContent=OFERTA.precio});
-(function(){var c=document.querySelector(".carousel");function m(d){var s=c.querySelector(".sample");c.scrollBy({left:d*((s?s.offsetWidth:300)+18),behavior:"smooth"})}
-document.querySelector(".prev").addEventListener("click",function(){m(-1)});document.querySelector(".next").addEventListener("click",function(){m(1)});
+(function(){document.querySelectorAll(".collection").forEach(function(col){var c=col.querySelector(".carousel");function m(d){var s=c.querySelector(".sample");c.scrollBy({left:d*((s?s.offsetWidth:300)+18),behavior:"smooth"})}col.querySelector(".prev").addEventListener("click",function(){m(-1)});col.querySelector(".next").addEventListener("click",function(){m(1)})});
 var v=document.getElementById("viewer"),vi=v.querySelector("img");document.querySelectorAll(".sample").forEach(function(b){b.addEventListener("click",function(){vi.src=b.dataset.image;vi.alt=b.dataset.title;v.showModal()})});
 v.querySelector(".close").addEventListener("click",function(){v.close()});v.addEventListener("click",function(e){if(e.target===v)v.close()})})();
 </script>
